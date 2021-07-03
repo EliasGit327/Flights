@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script>
+   $(document).ready(function(){
+     $.get("https://localhost:5001/Flights/GetString", function(data, status){
+           if (status === "success") {
+               $("#dbString").append("<b>" + data + "</b>");
+           }
+     });
+   });
+</script>
+
+<div>
+    <div id="dbString"></div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flights.Web", "Flights\Flights.Web.csproj", "{61BF23A1-4434-4726-87B5-67B5A9942CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flights.API", "Flights.API\Flights.API.csproj", "{B346F0AC-89FE-46D2-B443-90C82208074C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61BF23A1-4434-4726-87B5-67B5A9942CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BF23A1-4434-4726-87B5-67B5A9942CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BF23A1-4434-4726-87B5-67B5A9942CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BF23A1-4434-4726-87B5-67B5A9942CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B346F0AC-89FE-46D2-B443-90C82208074C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B346F0AC-89FE-46D2-B443-90C82208074C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B346F0AC-89FE-46D2-B443-90C82208074C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B346F0AC-89FE-46D2-B443-90C82208074C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AD6E410-4C89-4EC6-9669-C7A7DE48C3FB}
+	EndGlobalSection
+EndGlobal
