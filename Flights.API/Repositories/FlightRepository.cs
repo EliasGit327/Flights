@@ -1,35 +1,40 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using Flights.API.Data;
 
 namespace Flights.API.Repositories
 {
-    public class FlightRepository: IFlightRepository
+    public class FlightRepository
     {
-        private readonly IFlightContext _flightContext;
+        private readonly FlightContext _flightContext;
+        private readonly SqlConnection _connection;
         
-        public FlightRepository(IFlightContext flightContext)
+        public FlightRepository(FlightContext flightContext)
         {
             _flightContext = flightContext;
+            _connection = flightContext.Connection;
         }
         
-        public string Test()
+        public IEnumerable<Flight> GetFlights()
         {
-            return _flightContext.Connection;
+            var queryString = "SELECT * FROM dbo.Flight;";
+            var command = new SqlCommand(queryString, _connection);
+            using var reader = command.ExecuteReader();
+            var result = new List<Flight>();
+            while (reader.Read())
+            {
+                var flight = new Flight()
+                {
+                    Id = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    Author = reader.GetString(2),
+                    Isbn = reader.GetString(3)
+                };
+                result.Add(flight);
+            }
+            return result;
         }
-
-        public IEnumerable<string> GetLastFlights()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public string GetConcreteFlight(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool AddAFlight(string flight)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

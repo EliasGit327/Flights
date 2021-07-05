@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kGnLQe8yGsVALzJixCATnolb+PVhIxsJaLLUABdkcpc3QEe+raTaGp/k3lWmWigiHqJ27k/Oe5nkbWRreRbEBg==",
+  "dgSpecHash": "g+M1cJ7/+MTwxZ3Y0jQKNggbvBYYm/gFIuOaWpS1e/5Ki97ZxfOaoqsqXa24wl6lE1WVeS2vVbGW+js6c2CMcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elias\\source\\repos\\Flights\\Flights\\Flights.Web.csproj",
+  "projectFilePath": "/Users/elias/RiderProjects/Flights/Flights/Flights.Web.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

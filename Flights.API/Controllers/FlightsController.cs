@@ -17,18 +17,19 @@ namespace Flights.API.Controllers
     public class FlightsController : ControllerBase
     {
         private readonly ILogger<FlightsController> _logger;
-        private IFlightService _flightService;
+        private FlightService _flightService;
         
-        public FlightsController(ILogger<FlightsController> logger, IFlightService flightService)
+        public FlightsController(ILogger<FlightsController> logger, FlightService flightService)
         {
             _logger = logger;
             _flightService = flightService;
         }
 
-        [HttpGet("GetString")]
-        public ActionResult<string> GetString()
+        [HttpGet]
+        public ActionResult GetFlights()
         {
-            return Ok(_flightService.Test());
+            var result = _flightService.GetFlights();
+            return Ok(result);
         }
     }
 }

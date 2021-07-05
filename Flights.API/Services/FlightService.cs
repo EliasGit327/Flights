@@ -4,33 +4,19 @@ using Flights.API.Repositories;
 
 namespace Flights.API.Services
 {
-    public class FlightService: IFlightService
+    public class FlightService
     {
-        private readonly IFlightRepository _flightRepository;
+        private readonly FlightRepository _flightRepository;
 
-        public FlightService(IFlightRepository flightRepository)
+        public FlightService(FlightRepository flightRepository)
         {
             _flightRepository = flightRepository;
         }
-        
-        public string Test()
-        {
-            return _flightRepository.Test();
-        }
 
-        public IEnumerable<string> GetLastFlights()
+        public object GetFlights()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public string GetConcreteFlight(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool AddAFlight(string flight)
-        {
-            throw new System.NotImplementedException();
+            var result = _flightRepository.GetFlights();
+            return result;
         }
     }
 }

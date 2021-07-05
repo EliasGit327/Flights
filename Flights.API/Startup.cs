@@ -30,9 +30,9 @@ namespace Flights.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IFlightContext, FlightContext>();
-            services.AddScoped<IFlightRepository, FlightRepository>();
-            services.AddScoped<IFlightService, FlightService>();
+            services.AddScoped<FlightContext>();
+            services.AddScoped<FlightRepository>();
+            services.AddScoped<FlightService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flights.API", Version = "v1" });

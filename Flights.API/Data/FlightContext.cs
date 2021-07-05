@@ -1,14 +1,18 @@
 ﻿using System.Collections;
+using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
 namespace Flights.API.Data
 {
-    public class FlightContext: IFlightContext
+    public class FlightContext
     {
         public FlightContext(IConfiguration configuration)
         {
-            Connection = configuration["MainDB:ConnectionString"];
+            var connectionString = configuration["MainDB:ConnectionString"];
+            var connection = new SqlConnection(connectionString);
+            Connection = connection;
+            Connection.Open();
         }
-        public string Connection { get; }
+        public SqlConnection Connection { get; }
     }
 }
